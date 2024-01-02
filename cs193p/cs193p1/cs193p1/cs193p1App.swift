@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct cs193p1App: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }
