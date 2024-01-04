@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-func makeCardContent(index: Int) -> String {
-  return "🥹"
-}
-
 class EmojiMemoryGame {
 
   // if use static announce, variable name need classname prefix like this: EmojiMemoryGame.emojis(can be omitted in initialazation and static function)
