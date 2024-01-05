@@ -17,3 +17,7 @@
 
 - iOS：
   - [CS193p](https://cs193p.sites.stanford.edu)
+
+
+- Ruby:
+  - *Head First Ruby*
