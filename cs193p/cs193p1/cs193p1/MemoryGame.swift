@@ -11,11 +11,23 @@ import Foundation
 struct MemoryGame<Cardcontent> {
 
   // forbid external modify if set private(set)
-  var cards: [Card]
+  private(set) var cards: [Card]
+    
+    // mutating: calling this function is going to change something(current model should be variable: use var)
+    mutating func choose(_ card: Card) {
+      
+      let choose_index = index(of: card)
+      
+      // it make a copy of this card, struct are copied around all over the place
+      // var choose_card = cards[choose_index]
 
-  func choose(_ card: Card) {
+      cards[choose_index].isFaceUp.toggle()
+      print("im choose: \n\(cards)")
 
   }
+    func index(of card: Card) -> Int{
+        card.id
+    }
 
   init(PairsNumberOfCards: Int, createCardContent: (Int) -> Cardcontent) {
     cards = [Card]()

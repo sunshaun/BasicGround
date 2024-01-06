@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-class EmojiMemoryGame {
+// combo: ObservableObject - @Published - @ObservedObject(in View)
+class EmojiMemoryGame :ObservableObject{
 
   // if use static announce, variable name need classname prefix like this: EmojiMemoryGame.emojis(can be omitted in initialazation and static function)
   static let emojis = [
@@ -24,9 +25,15 @@ class EmojiMemoryGame {
   }
 
   // initialazation. and annouce private can protect model
-  private var model: MemoryGame<String> = createMemoryGame()
+    @Published private var model: MemoryGame<String> = createMemoryGame()
   var cards: [MemoryGame<String>.Card] {
     return model.cards
   }
+    
+  // MARK: chose
+    func choose (_ card: MemoryGame<String>.Card) {
+        model.choose(card)
+        
+    }
 
 }
