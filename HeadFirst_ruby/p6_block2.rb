@@ -6,6 +6,7 @@
 # e.g.: items.find_all(|item| item.length > 3) // return a array element length > 3
 #
 # all blocks return the value of their last expression
+# ".map" method can receive an original array, pass it to a block for processing, and then return a array
 
 lines = []
 
@@ -46,3 +47,16 @@ end
 
 # [1, 2, 3, 4, 5].find_all { |p| p % 2 == 0 }
 # output: [2, 4]
+
+# simple map e.g.
+def m_map
+  result_array = []
+  each do |p|
+    result_array << yield(p)
+  end
+  result_array
+end
+
+"apple-better-chating-dong-editing".split("-").map do |p|
+  puts p if p.include?("ing")
+end
