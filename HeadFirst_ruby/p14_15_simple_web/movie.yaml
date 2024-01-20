@@ -1,0 +1,16 @@
+---
+1: !ruby/object:Movie
+  title: TT01
+  director: d01
+  year: '2001'
+  id: 1
+2: !ruby/object:Movie
+  title: Start Wars
+  director: George L
+  year: '1977'
+  id: 2
+3: !ruby/object:Movie
+  title: Forrest Gump
+  director: Robert Z
+  year: '1994'
+  id: 3

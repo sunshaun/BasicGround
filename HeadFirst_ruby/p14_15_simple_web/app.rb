@@ -4,17 +4,30 @@
 
 require "sinatra"
 require "movie"
+require "yaml"
+require "movie_store"
 
+store = MovieStore.new("movie.yaml")
 get("/") do
-  @movies = []
-  5.times do |i|
-    @movies[i] = Movie.new
-    @movies[i].title = "Number." + i.to_s
-  end
-  p @movies
+  @movies = store.all
   erb :index
 end
 
 get("/movies/new") do
   erb :new
+end
+
+post("/movies/create") do
+  @movie = Movie.new
+  @movie.title = params["title"]
+  @movie.director = params["director"]
+  @movie.year = params["year"]
+  store.save(@movie)
+  redirect "/"
+end
+
+# This router must be last
+get("/movies/:id") do
+  @movie = store.find(params["id"].to_i)
+  erb :show
 end
