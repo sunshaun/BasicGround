@@ -16,17 +16,23 @@ struct MemoryGame<Cardcontent> {
     // mutating: calling this function is going to change something(current model should be variable: use var)
     mutating func choose(_ card: Card) {
       
-      let choose_index = index(of: card)
+        if let choose_index = index(of: card) {
+            
+            cards[choose_index].isFaceUp.toggle()
+            print("im choose: \n\(choose_index)")
+
+        }
       
-      // it make a copy of this card, struct are copied around all over the place
-      // var choose_card = cards[choose_index]
 
-      cards[choose_index].isFaceUp.toggle()
-      print("im choose: \n\(cards)")
-
+    
   }
-    func index(of card: Card) -> Int{
-        card.id
+    func index(of card: Card) -> Int?{
+        for index in 0..<cards.count{
+            if cards[index].id == card.id {
+                return index
+            }
+        }
+        return nil
     }
 
   init(PairsNumberOfCards: Int, createCardContent: (Int) -> Cardcontent) {
@@ -41,7 +47,7 @@ struct MemoryGame<Cardcontent> {
 
   struct Card: Identifiable {
 
-    var isFaceUp: Bool = true
+    var isFaceUp: Bool = false
     var isMatched: Bool = false
     var content: Cardcontent
     var id: Int
