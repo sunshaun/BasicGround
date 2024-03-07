@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="theTableView2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pry-8R-4m0">
+                                <rect key="frame" x="15" y="69" width="363" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CcB-7g-Lmg"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="美洲"/>
+                                    <segment title="歐洲"/>
+                                    <segment title="亞洲"/>
+                                    <segment title="大洋洲"/>
+                                    <segment title="非洲"/>
+                                </segments>
+                                <connections>
+                                    <action selector="theSelectChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="u1G-Vq-1RB"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dPn-cV-79n">
+                                <rect key="frame" x="15" y="109" width="363" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dPn-cV-79n" secondAttribute="bottom" id="IMb-3y-3ha"/>
+                            <constraint firstItem="dPn-cV-79n" firstAttribute="top" secondItem="Pry-8R-4m0" secondAttribute="bottom" id="S2S-af-J9d"/>
+                            <constraint firstItem="Pry-8R-4m0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Y7l-qq-5dY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pry-8R-4m0" secondAttribute="trailing" constant="15" id="Yp5-tG-91A"/>
+                            <constraint firstItem="Pry-8R-4m0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="aQJ-97-Jc8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dPn-cV-79n" secondAttribute="trailing" constant="15" id="fuu-1G-2qa"/>
+                            <constraint firstItem="Pry-8R-4m0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u36-Ax-Fb8"/>
+                            <constraint firstItem="dPn-cV-79n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="yMa-c0-0I3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="theSeg" destination="Pry-8R-4m0" id="85u-RZ-N1g"/>
+                        <outlet property="theTableView" destination="dPn-cV-79n" id="MiU-9f-tw8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
