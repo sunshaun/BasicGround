@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         getUserData { data, error in
             self.theIndicator.startAnimating()
             if let error = error{
-                let alert = UIAlertController(title: "Error", message: "Get data error", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: "Get data error: \(error)", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title:"OK", style: .default, handler: { alert in
                     
                 }))
@@ -69,12 +69,9 @@ class ViewController: UIViewController {
                 return
             }
             if let data = data {
+                let user = JSON(data)["results"].arrayValue[0]
+                handler(user, nil)
                 
-                if let Stringdata = String(data:data, encoding: .utf8){
-                    
-                    let user = JSON(data)["results"].arrayValue[0]
-                    handler(user, nil)
-                }
             }
         }
         
