@@ -36,3 +36,13 @@
 ehthumbs.db
 Thumbs.db
 cs193p/.vscode
+Pods
+Podfile.lock
+GoogleService-Info.plist
+project.xcworkspace
+project.pbxproj
+UserInterfaceState.xcuserstate
+IDEWorkspaceChecks.plist
+xcschememanagement.plist
+Preview Content
+iOSdev/LuckyCell/LuckyCell.xcworkspace/contents.xcworkspacedata
