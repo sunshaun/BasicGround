@@ -16,6 +16,9 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Button("View Detail") {
+                
+            }
             Button(btnState) {
                 if auth.currentUser == nil{
                     auth.signInAnonymously()
