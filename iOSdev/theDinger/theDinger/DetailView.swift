@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     let scrum: DailyScrum
+    @State private var isPresentEditView = false
     var body: some View {
         List{
             Section("Meeting Detail") {
@@ -41,6 +42,32 @@ struct DetailView: View {
                 }
             }
         }.navigationTitle("\(scrum.title)")
+            .toolbar{
+                Button("Edit") {
+                    isPresentEditView = true
+                }
+            }
+            .sheet(isPresented: $isPresentEditView, content: {
+                NavigationStack{
+                    DetailEditView()
+                        .navigationTitle("Edit Detail")
+                        .toolbar{
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") {
+                                    isPresentEditView = false
+                                }
+                            }
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("Done") {
+                                    isPresentEditView = false
+                                }
+                            }
+                            
+                        }
+                }
+               
+            })
+        
         
     }
 }
